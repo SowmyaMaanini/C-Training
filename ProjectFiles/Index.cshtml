@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+   
+    <h2>History</h2>
+    <p class="lead" >There are two things that never fail to brighten our day: the iconic '90s sitcom Friends and pizza. Lucky for us, every time we begin a re-watching session courtesy of Netflix, we can be sure that Friends will never fail to bring the mozzarella-laden love of my life into the fold each episode. Fans will surely remember that Joey Tribbiani had a borderline romantic love affair with the New York specialty, but even aside from Joey, pizza was a prominent staple in several episodes during the series' decade-long run. Given that all the characters resided in New York and had decent taste, this comes as no surprise.</p>
+    <p><a href="https://www.bustle.com/articles/107808-8-times-friends-was-as-obsessed-with-pizza-as-you-are" class="btn btn-primary btn-lg">Click for more &raquo;</a></p>
+</div>
+<hr/>
+
+<div >
+    <div class="row">
+
+        <div class="col-md-4">
+            <h3>Veg</h3>
+            <div class="slideshow-container">
+                <div class="mySlides1">
+                    <img src="~/Margherita.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Margherita</h4>
+                    </div>
+                </div>
+                <div class="mySlides1">
+                    <img src="~/Farmhouse.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Farmhouse</h4>
+                    </div>
+                </div>
+                <div class="mySlides1">
+                    <img src="~/Mexican green wave.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Mexican Green Wave</h4>
+                    </div>
+                </div>
+                <div class="mySlides1">
+                    <img src="~/cheese n corn.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Cheese N Corn</h4>
+                    </div>
+                </div>
+                <div class="mySlides1">
+                    <img src="~/Veg Extravaganza.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Veg Extravaganza</h4>
+                    </div>
+                </div>
+                <button class="w3-button w3-black w3-display-left" onclick="plusSlides(-1,0)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusSlides(1,0)">&#10095;</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>NonVeg</h3>
+            <div class="slideshow-container">
+                <div class="mySlides2">
+                    <img src="~/Pepper Barbecue Chicken.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Pepper Barbecue Chicken</h4>
+                    </div>
+                </div>
+                <div class="mySlides2">
+                    <img src="~/Chicken Golden Delight.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Chicken Golden Delight</h4>
+                    </div>
+
+                </div>
+                <div class="mySlides2">
+                    <img src="~/Chicken Dominator.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Chicken Dominator</h4>
+                    </div>
+
+                </div>
+                <div class="mySlides2">
+                    <img src="~/Non Veg Supreme.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Non Veg Supreme</h4>
+                    </div>
+
+                </div>
+                <div class="mySlides2">
+                    <img src="~/Chicken Fiesta.JPG" style="width:100%" />
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        <h4>Chicken Fiesta</h4>
+                    </div>
+
+                </div>
+                <button class="w3-button w3-black w3-display-left" onclick="plusSlides(-1,1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusSlides(1,1)">&#10095;</button>
+
+            </div>
+        </div>
+        <script>
+            var slideIndex = [1,1];
+            var slideId = ["mySlides1", "mySlides2"]
+            showSlides(1, 0);
+            showSlides(1, 1);
+            showSlides(1, 2);
+            function plusSlides(n, no) {
+                showSlides(slideIndex[no] += n, no);
+            }
+
+            function showSlides(n, no) {
+                var i;
+                var x = document.getElementsByClassName(slideId[no]);
+                if (n > x.length) { slideIndex[no] = 1 }
+                if (n < 1) { slideIndex[no] = x.length }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex[no] - 1].style.display = "block";
+            }
+            
+        </script>
+
+
+
+
+
+    </div>
+   
+ </div>
+
+
+
+
+
+
+
+<br/>
+
+<a href="https://localhost:44309/Home/Login" class="btn btn-primary" >Select</a>
+
+

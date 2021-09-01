@@ -1,0 +1,182 @@
+﻿@model WebApplication10.Models.orderdetail
+
+@{
+    ViewBag.Title = "Order";
+}
+
+<h2>Order</h2>
+<h3>Place your Order here</h3>
+<link href="~/Content/order.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.OrderId, "101", new { htmlAttributes = new { @class = "form-horizantal" } })
+            @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })
+
+        </div>
+    </div>*@
+    
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.orderdate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.orderdate, "", new { htmlAttributes = new { @class = "form-horizantal" } })
+            @Html.ValidationMessageFor(model => model.orderdate, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">*@
+    @*@Html.DropDownListFor(model => model.Type, new SelectList(" "), "Select", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })*@
+    @*<select name="Type">
+                    <option value="select">select</option>
+                    <option value="veg">Veg</option>
+                    <option value="NonVeg">NonVeg</option>
+
+                    </select>
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PizzaName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.DropDownListFor(model => model.PizzaName, new SelectList(" "), "Select", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PizzaName, "", new { @class = "text-danger" })*@
+            @*<h5>Veg</h5>
+
+        <select name="PizzaName">
+            <option value="select">select</option>
+            <option value="Margherita">Margherita</option>
+            <option value="Farmhouse">Farmhouse</option>
+            <option value="Mexican Green Wave">Mexican Green Wave</option>
+            <option value="Cheese N Corn">Cheese N Corn</option>
+
+        </select>
+
+
+        <h5>
+            NonVeg
+        </h5>
+        <select name="PizzaName">
+            <option value="select">select</option>
+            <option value="Pepper Barbecue Chicken">Pepper Barbecue Chicken</option>
+            <option value="Chicken Golden Delight">Chicken Golden Delight</option>
+            <option value="Chicken Dominator">Chicken Dominator</option>
+            <option value="NonVeg Supreme">NonVeg Supreme</option>
+            <option value="Chicken Fiesta">Chicken Fiesta</option>
+        </select>*@
+            @Html.RadioButton("PizzaName", "Margherita-V01")Margherita  @Html.RadioButton("PizzaName", "Farmhouse-V02 ")Farmhouse  @Html.RadioButton("PizzaName", "Mexican Green Wave-V03 ")Mexican Green Wave  @Html.RadioButton("PizzaName", "Cheese N Corn-V04 ")Cheese N Corn  @Html.RadioButton("PizzaName", "Veg Extravaganza-V05 ")Veg Extravaganza
+            <br/>
+            @Html.RadioButton("PizzaName", "Pepper Barbecue Chicken-NV01")Pepper Barbecue Chicken  @Html.RadioButton("PizzaName", "Chicken Golden Delight-NV02")Chicken Golden Delight @Html.RadioButton("PizzaName", "Chicken Dominator-NV03")Chicken Dominator  @Html.RadioButton("PizzaName", "NonVeg Supreme-NV04")NonVeg Supreme @Html.RadioButton("PizzaName", "Chicken Fiesta-NV05")Chicken Fiesta
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.size, htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<input id="txtName" type="text"  value="Size"/>*@
+        <div class="col-md-10">
+            @*@Html.DropDownListFor(model => model.size, new SelectList(""), "Select", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.size, "", new { @class = "text-danger" })*@
+            <select name="Size">
+                <option value="select">select</option>
+                
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.crust, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.DropDownListFor(model => model.crust, new SelectList(""), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.crust, "", new { @class = "text-danger" })*@
+            <select name="crust">
+                <option value="select">select</option>
+                <option value="Thin">Thin</option>
+                <option value="Fresh Pan">Fresh Pan</option>
+                <option value="Cheese Burst">Cheese Burst</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Toppings, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.RadioButton("Toppings",  "Cheddar")Cheddar  @Html.RadioButton("Toppings", "Black Olives")BlackOlives @Html.RadioButton("Toppings",  "Jalapenos")Jalapenos
+            @Html.RadioButton("Toppings", "Pepporoni")Pepporoni @Html.RadioButton("Toppings", "Sausage")Sausage @Html.RadioButton("Toppings", "Grilled Chicken")Grilled Chicken
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.count, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.count, " ", new { htmlAttributes = new { @class = "form-horizantal" } })
+        @Html.ValidationMessageFor(model => model.count, "", new { @class = "text-danger" })*@
+            <input class="form-group" type="text" placeholder="count" value="2" readonly />
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Address, " ", new { htmlAttributes = new { @class = "form-horizantal" } })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            @*@Html.TextBoxFor(model => model.Amount, " ", new {  @class = "form-horizantal" , @Value="Rs.420"} )
+        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })*@
+            <input class="form-group" type="text" placeholder="Amount" value="Rs.420" readonly />
+            <br/>
+            <p><b>payment only through creditcard</b></p> 
+        </div>
+        @*<input type="text" name="Amount" value="Rs.420">*@
+       
+    </div>
+   
+    <div class="form-group">
+        @Html.LabelFor(model => model.CreditcardNo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.CreditcardNo, " ", new { htmlAttributes = new { @class = "form-horizantal" } })
+            @Html.ValidationMessageFor(model => model.CreditcardNo, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+    @*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Confirm Order" class="btn btn-default" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-2">
+            <label class="label-success">@ViewBag.SuccessMessage</label>
+        </div>*@
+       <div class="form-group">
+           <div class="col-md-offset-2 col-md-10">
+               <input type="submit" value="Place Order" class="btn btn-success"/> 
+           </div>
+
+       </div>
+    
+        <a href="https://localhost:44309/Home/Summary" class="btn btn-primary">Next</a>
+    </div>
+</div>
+
+
+    
+}
+
